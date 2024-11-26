@@ -1,0 +1,37 @@
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #42a5f5, #64b5f6);
+    height: 100%;
+  }
+  
+  .login-header {
+    text-align: center;
+    padding: 1em;
+  }
+  
+  .login-header h2 {
+    color: white;
+  }
+  
+  .login-header p {
+    color: white;
+  }
+  
+  .login-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .ion-button {
+    --background: #42a5f5;
+    --background-hover: #64b5f6;
+    --background-activated: #42a5f5;
+    --background-focused: #64b5f6;
+    color: white;
+  }
+  

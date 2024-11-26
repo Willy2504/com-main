@@ -1,0 +1,22 @@
+/* Custom Green Styles */
+.custom-green-card {
+    background-color: #4CAF50;
+    color: white; /* Ensures text is readable */
+  }
+  
+  .custom-green-card ion-card-header,
+  .custom-green-card ion-card-title,
+  .custom-green-card ion-card-subtitle {
+    color: white;
+  }
+  
+  .custom-green-button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .custom-green-button:hover {
+    background-color: #45a049; /* Slightly darker shade on hover */
+  }
+  
