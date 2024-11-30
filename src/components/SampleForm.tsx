@@ -3,7 +3,7 @@ import { FormikInit, SelectInputField, TextInputField } from "./form";
 import * as Yup from "yup";
 
 const schema = Yup.object().shape({
-  name: Yup.string().min(20),
+  name: Yup.string().min(20).max(30),
   test: Yup.string(),
   data: Yup.string(),
   age: Yup.number(),

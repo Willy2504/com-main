@@ -1,9 +1,10 @@
-import { SampleForm } from "../components/SampleForm";
+import Dashboard from "../components/DashBoard/Dashboard";
+
 
 export default function MobileHome() {
   return (<>Android
 
-          <SampleForm/>
+          <Dashboard/>
   
   </>
   

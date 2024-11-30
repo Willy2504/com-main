@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ion-padding {
+  background-color: #f4f7fa;
+}
+
+.ion-button {
+  --background: #4caf50;
+  --background-hover: #45a049;
+  --background-activated: #4caf50;
+  --background-focused: #45a049;
+  color: white;
+}

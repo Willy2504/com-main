@@ -1,0 +1,123 @@
+:root {
+    --primary-color: #4b57f5;
+    --balance-text-color: #ffffff;
+    --card-background-color: #eef3fa;
+  }
+  
+  .ion-page {
+    background-color: var(--card-background-color);
+  }
+  
+  .header {
+    text-align: center;
+    color: var(--balance-text-color);
+    padding: 16px;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .balance-card {
+    background-color: var(--primary-color);
+    color: var(--balance-text-color);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 16px;
+    text-align: center;
+  }
+  
+  .balance-card h2 {
+    font-size: 26px;
+    margin: 10px 0;
+  }
+  
+  .balance-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  
+  .section {
+    margin: 16px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section h3 {
+    margin-bottom: 8px;
+  }
+  
+  .section p {
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  /* Custom Segment Button Styling */
+.segment-button-custom {
+  font-size: 14px;               /* Reduced font size */
+  padding: 6px 10px;             /* Smaller button size */
+  transition: all 0.3s ease-in;  /* Smooth transition */
+  color: black;                  /* Default text color */
+  background-color: white;       /* Default background */
+  border-radius: 4px;            /* Slightly rounded corners */
+  border: 1px solid #ccc;        /* Border for button visibility */
+}
+
+/* Hover Effect */
+.segment-button-custom:hover {
+  background-color: #c8e6c9; /* Light green background on hover */
+  color: white;              /* White text on hover */
+}
+
+/* Active Button Styling */
+.segment-button-custom.ion-activated {
+  background-color: #4CAF50 !important; /* Green active state */
+  color: white !important;
+}
+
+/* Custom Segment Container */
+.custom-segment {
+  background-color:white;
+  padding: 6px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.custom-toolbar {
+  background-color: #28a745; /* Green toolbar */
+  color: white;
+}
+
+.balance-card {
+  background-color: #28a745; /* Green background */
+  color: white; /* Text color for readability */
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.balance-card h2, .balance-card h1, .balance-card p {
+  color: white; /* Ensure all text is visible */
+}
+
+.balance-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.section {
+  margin: 16px;
+}
+
+.section h3 {
+  margin-bottom: 8px;
+  color: #28a745;
+}
+
+.ion-segment-button {
+  --color: #28a745;
+}

@@ -1,0 +1,60 @@
+.group-loans-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.group-loans-card IonCardHeader {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.group-loans-card IonCardSubtitle {
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.loan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.loan-row:last-child {
+  border-bottom: none;
+}
+
+.text-right {
+  text-align: right;
+  font-weight: bold;
+  color: #555;
+}
+
+.group-loans-card .loan-row IonCol {
+  font-size: 1rem;
+  color: #333;
+}
+
+.group-loans-card .loan-row IonCol:nth-child(2) {
+  color: #4caf50;
+}
+/* Green Card Style */
+.green-card {
+  background-color: #4caf50; /* Green Background */
+  color: #ffffff; /* White Text */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.green-card IonCardSubtitle,
+.green-card IonCardContent,
+.green-card IonCardTitle {
+  color: #ffffff !important;
+}
+
