@@ -15,7 +15,7 @@ import {
   IonAvatar,
   IonButtons,
 } from "@ionic/react";
-import { add, menu, refresh, search } from "ionicons/icons";
+import { add, menu, refresh, search, peopleOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
 
 const GroupMembers: React.FC = () => {
@@ -30,6 +30,10 @@ const GroupMembers: React.FC = () => {
     history.push("/add-member"); // Navigate to the Add Member page
   };
 
+  const handleMeetingsClick = () => {
+    history.push("/meetings"); // Navigate to the Meetings page
+  };
+
   return (
     <IonPage>
       {/* Header */}
@@ -42,8 +46,9 @@ const GroupMembers: React.FC = () => {
           </IonButtons>
           <IonTitle>Members</IonTitle>
           <IonButtons slot="end">
-            <IonButton>
-              <IonIcon icon={refresh} />
+            {/* Meetings Icon */}
+            <IonButton onClick={handleMeetingsClick}>
+              <IonIcon icon={peopleOutline} />
             </IonButton>
             <IonButton>
               <IonIcon icon={search} />
@@ -54,8 +59,6 @@ const GroupMembers: React.FC = () => {
 
       {/* Content */}
       <IonContent className="ion-padding">
-       
-
         {/* Members List */}
         <IonList>
           {members.map((member, index) => (

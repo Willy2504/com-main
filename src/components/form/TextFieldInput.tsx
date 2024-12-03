@@ -26,8 +26,7 @@ export const TextInputField: FC<Prop> = ({
   id,
   name,
   label,
-
-  type,
+  type = "text",
   placeholder = "",
   size = "medium",
   rows,
@@ -43,26 +42,69 @@ export const TextInputField: FC<Prop> = ({
   const { value, handleChange, hasError, errorMessage, handleBlur } =
     useFormikField(name);
 
-    console.log(errorMessage)
-
   useEffect(() => {
     getValue && getValue(value);
   }, [value]);
 
   return (
-    <>
-      <IonItem>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        margin: "16px 0",
+        padding: "12px",
+        borderRadius: "8px",
+        backgroundColor: "#f9f9f9",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <label
+        htmlFor={name}
+        style={{
+          marginBottom: "6px",
+          fontWeight: "600",
+          fontSize: "14px",
+          color: "#4CAF50",
+        }}
+      >
+        {label}
+      </label>
+      <IonItem
+        lines="none" // Removes the lines
+        style={{
+          backgroundColor: "#ffffff",
+          borderRadius: "6px",
+          padding: "0 8px",
+          border: hasError ? "1px solid red" : "1px solid #ccc",
+        }}
+      >
         <IonInput
-          onBlur={handleBlur}
-          errorText={errorMessage}
+          id={id}
+          type={type}
           name={name}
-          onIonInput={handleChange}
           value={value}
-          label={label}
-          labelPlacement="floating"
+          onIonInput={handleChange}
+          onBlur={handleBlur}
           placeholder={placeholder}
-        ></IonInput>
+          disabled={disabled}
+          style={{
+            padding: "10px",
+            fontSize: "14px",
+            borderRadius: "6px",
+          }}
+        />
       </IonItem>
-    </>
+      {hasError && (
+        <div
+          style={{
+            marginTop: "6px",
+            color: "red",
+            fontSize: "12px",
+          }}
+        >
+          {errorMessage}
+        </div>
+      )}
+    </div>
   );
 };

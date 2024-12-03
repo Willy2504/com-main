@@ -1,55 +1,58 @@
-import React, { useState } from "react";
+import React from "react";
+import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonButton, IonImg } from "@ionic/react";
+import { FormikInit, TextInputField, SelectInputField } from "./form"; // Assuming you've created these components
+import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
-import { IonContent, IonPage, IonHeader, IonToolbar, IonTitle, IonInput, IonButton, IonItem, IonLabel, IonImg } from "@ionic/react";
 import "./Login.css";
 
 const Login: React.FC<{ onLogin: () => void }> = ({ onLogin }) => {
-  const [groupId, setGroupId] = useState('');
-  const [pin, setPin] = useState('');
-  const history = useHistory(); // Use history to programmatically navigate
+  const history = useHistory();
 
-  const handleLogin = () => {
-    if (groupId && pin) {
-      onLogin(); // Notify parent that login is successful
-      history.push("/home"); // Navigate to the home page
-    } else {
-      alert('Please enter both Group ID and PIN.');
-    }
+  // Yup validation schema
+  const schema = Yup.object().shape({
+    groupId: Yup.string().required("Group ID is required").min(2).max(5),
+    pin: Yup.string().min(4, "PIN must be at least 4 digits").required("PIN is required"),
+  });
+
+  const handleLoginSubmit = (values: { groupId: string; pin: string }) => {
+    onLogin();
+    history.push("/home");
   };
 
   return (
     <IonPage>
       <IonContent className="ion-padding login-content">
-        <div className="login-header">
-          <h2>Welcome Back!</h2>
-          <p>Please log in to continue.</p>
-        </div>
-        <IonImg src="/comsip.jpg" className="login-img" />
-        <IonItem>
-          <IonLabel position="floating">Group ID</IonLabel>
-          <IonInput
-            type="text"
-            value={groupId}
-            onIonChange={(e) => setGroupId(e.detail.value!)}
-          />
-        </IonItem>
-        <IonItem>
-          <IonLabel position="floating">PIN</IonLabel>
-          <IonInput
-            type="password"
-            value={pin}
-            onIonChange={(e) => setPin(e.detail.value!)}
-            inputmode="numeric"
-          />
-        </IonItem>
-        <IonButton
-          expand="block"
-          color="success"
-          onClick={handleLogin}
-          style={{ marginTop: '1em' }}
+        <IonImg src="/comsip.jpg" className="login-img"/>
+        <FormikInit
+          initialValues={{ groupId: "", pin: "" }}
+          validationSchema={schema}
+          onSubmit={handleLoginSubmit}
         >
-          Log In
-        </IonButton>
+          <div className="login-header">
+            <h2>Welcome Back!</h2>
+            <p>Please log in to continue.</p>
+          </div>
+
+          <TextInputField
+            name="groupId"
+            label="Group ID"
+            placeholder="Enter Group ID" id={""}          />
+
+          <TextInputField
+            name="pin"
+            label="PIN"
+            type="password"
+            placeholder="Enter PIN" id={""}          />
+
+          <IonButton
+            expand="block"
+            color="success"
+            type="submit"
+            style={{ marginTop: "1em" }}
+          >
+            Log In
+          </IonButton>
+        </FormikInit>
       </IonContent>
     </IonPage>
   );

@@ -56,6 +56,7 @@ import Login from "./components/Login";
 import AddTransactionForm from "./components/Transaction/AddTransactionsForm";
 import RequestLoanPage from "./components/Loans/RequestLoanPage";
 import Grouproles from "./components/Grouproles";
+import Meetings from "./Meetings";
 /* Icons */
 import {
   homeOutline,
@@ -103,6 +104,7 @@ const App: React.FC = () => {
               <Route path="/request-loan" component={RequestLoanPage} exact />
               <Route path="/cashbox-details" component={CashBoxDetails} />
               <Route path="/group-roles" component={Grouproles} exact />
+              <Route path="/meetings" component={Meetings} />
               <Route exact path="/">
                 <Redirect to="/home" />
               </Route>
